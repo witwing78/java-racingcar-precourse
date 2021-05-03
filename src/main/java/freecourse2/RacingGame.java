@@ -11,7 +11,7 @@ public class RacingGame {
 
     private void readInput() {
         RacingCarInput racingCarInput = new RacingCarInput();
-        List<String> carNames = racingCarInput.getCarNames();
+        Cars car = new Cars(racingCarInput.getCarNames());
         int tryNumbers = racingCarInput.getTryNumbers();
     }
 
