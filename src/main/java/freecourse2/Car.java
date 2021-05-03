@@ -18,7 +18,18 @@ public class Car {
             position ++;
     }
 
+    public void move() {
+        racingNumber = new RandomNumber();
+        move(racingNumber);
+    }
+
+    public String getName(){
+        return name;
+    }
     public int getPosition() {
         return position;
+    }
+    public boolean isPositionZero(){
+        return (getPosition() > 0);
     }
 }

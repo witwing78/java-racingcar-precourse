@@ -1,9 +1,9 @@
 package freecourse2;
 
-import java.util.List;
-import java.util.Scanner;
-
 public class RacingGame {
+
+    private Cars cars;
+    private int tryNumbers;
 
     public RacingGame() {
         readInput();
@@ -11,14 +11,19 @@ public class RacingGame {
 
     private void readInput() {
         RacingCarInput racingCarInput = new RacingCarInput();
-        Cars car = new Cars(racingCarInput.getCarNames());
-        int tryNumbers = racingCarInput.getTryNumbers();
+        cars = new Cars(racingCarInput.getCarNames());
+        tryNumbers = racingCarInput.getTryNumbers();
     }
 
     public void play() {
+        RacingCarOutput racingCarOutput = new RacingCarOutput();
+        racingCarOutput.printResultTitle();
+        for (int i=0 ; i<tryNumbers; i++) {
+            cars.move();
+            racingCarOutput.printRacingResult(cars);
+        }
     }
 
     public void end() {
-
     }
 }
