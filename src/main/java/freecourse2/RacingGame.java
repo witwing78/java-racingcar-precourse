@@ -32,7 +32,12 @@ public class RacingGame {
             racingCarOutput.printRacingResult(cars);
         }
     }
+
+
     public void end() {
+        //우승자 발표
+
+
     }
 
 }

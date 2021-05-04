@@ -27,8 +27,10 @@ class CarsTest {
         racingGame.play();
 
         ArrayList<String> winnerCarsName = new ArrayList<>();
+        RacingWinner racingWinner = new RacingWinner(cars);
+        racingWinner.checkRacingWinners();
 
-        for (Car car: cars.getWinners()) {
+        for (Car car: racingWinner.getRacingWinners()) {
             winnerCarsName.add(car.getName());
         }
 

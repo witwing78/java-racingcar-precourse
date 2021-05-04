@@ -27,17 +27,4 @@ public class Cars {
         }
     }
 
-    public List<Car> getWinners() {
-        List<Car> sortedCars = cars.stream()
-                .sorted(Comparator.comparing(Car::getPosition).reversed())
-                .collect(Collectors.toList());
-
-        List<Car> winners = sortedCars.stream()
-                .filter(car -> car.getPosition() == sortedCars.get(0).getPosition())
-                .collect(Collectors.toList());
-
-        return winners;
-    }
-
-
 }
