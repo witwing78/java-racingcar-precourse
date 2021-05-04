@@ -10,7 +10,7 @@ public class Car {
     }
 
     public Car(String name) {
-        this.name = name;
+        this.name = name.trim();
     }
 
     public void move(RacingNumber racingNumber) {
@@ -19,7 +19,9 @@ public class Car {
     }
 
     public void move() {
-        racingNumber = new RandomNumber();
+        if(racingNumber == null) {
+            racingNumber = new RandomNumber();
+        }
         move(racingNumber);
     }
 
@@ -31,5 +33,11 @@ public class Car {
     }
     public boolean isPositionZero(){
         return (getPosition() > 0);
+    }
+    public boolean isCarNameSize(String carName){
+        return (carName.length() > 5);
+    }
+    public void setRacingNumber(RacingNumber racingNumber) {
+        this.racingNumber = racingNumber;
     }
 }

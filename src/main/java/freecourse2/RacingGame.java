@@ -1,5 +1,9 @@
 package freecourse2;
 
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class RacingGame {
 
     private Cars cars;
@@ -7,6 +11,11 @@ public class RacingGame {
 
     public RacingGame() {
         readInput();
+    }
+
+    public RacingGame(Cars cars, int tryNumbers){
+        this.cars = cars;
+        this.tryNumbers = tryNumbers;
     }
 
     private void readInput() {
@@ -23,7 +32,7 @@ public class RacingGame {
             racingCarOutput.printRacingResult(cars);
         }
     }
-
     public void end() {
     }
+
 }
