@@ -1,16 +1,14 @@
 package freecourse2;
 
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class RacingGame {
 
     private Cars cars;
     private int tryNumbers;
+    private ResultView resultView;
 
     public RacingGame() {
-        readInput();
     }
 
     public RacingGame(Cars cars, int tryNumbers){
@@ -18,26 +16,26 @@ public class RacingGame {
         this.tryNumbers = tryNumbers;
     }
 
-    private void readInput() {
-        RacingCarInput racingCarInput = new RacingCarInput();
-        cars = new Cars(racingCarInput.getCarNames());
-        tryNumbers = racingCarInput.getTryNumbers();
+    public void readInput() {
+        InputView inputView = new InputView();
+        cars = new Cars(inputView.getCarNames());
+        tryNumbers = inputView.getTryNumbers();
     }
 
     public void play() {
-        RacingCarOutput racingCarOutput = new RacingCarOutput();
-        racingCarOutput.printResultTitle();
+        resultView = new ResultView();
+        resultView.printResultTitle();
         for (int i=0 ; i<tryNumbers; i++) {
             cars.move();
-            racingCarOutput.printRacingResult(cars);
+            resultView.printRacingResult(cars);
         }
     }
 
-
     public void end() {
-        //우승자 발표
-
-
+        RacingWinner racingWinner = new RacingWinner(cars);
+        racingWinner.checkRacingWinners();
+        List<Car> winners = racingWinner.getRacingWinners();
+        resultView.printWinners(winners);
     }
 
 }

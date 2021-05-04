@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class RacingCarInput {
+public class InputView {
 
     private static final String CAR_NAMES_MSG = "경주할 자동차 이름을 입력하세요. (이름은 쉼표(,) 기준으로 구분) ";
     private static final String TRY_NUMBERS_MSG = "시도할 회수는 몇회인가요? ";
@@ -13,7 +13,7 @@ public class RacingCarInput {
 
     private Scanner scanner;
 
-    public RacingCarInput() {
+    public InputView() {
     }
 
     public List<String> getCarNames() {
