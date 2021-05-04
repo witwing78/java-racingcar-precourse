@@ -25,9 +25,10 @@ public class RacingGame {
     public void play() {
         resultView = new ResultView();
         resultView.printResultTitle();
-        for (int i=0 ; i<tryNumbers; i++) {
+        while(isEnd()){
             cars.move();
             resultView.printRacingResult(cars);
+            reduce();
         }
     }
 
@@ -36,6 +37,14 @@ public class RacingGame {
         racingWinner.checkRacingWinners();
         List<Car> winners = racingWinner.getRacingWinners();
         resultView.printWinners(winners);
+    }
+
+    public boolean isEnd(){
+        return tryNumbers != 0;
+    }
+
+    public void reduce() {
+        this.tryNumbers--;
     }
 
 }
